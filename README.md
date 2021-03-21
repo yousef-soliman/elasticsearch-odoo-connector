@@ -1,6 +1,4 @@
 # Elasticsearch Odoo Connector
-Elasticsearch Odoo Connector
-
 Elasticsearch is awesome tools in searching saving document, plus visualize data using `kibana`.
 
 Elasticsearch Odoo Connector is a powerful and flexible toolkit for connecting Odoo with elasticsearch.

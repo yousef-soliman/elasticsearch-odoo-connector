@@ -29,5 +29,3 @@ you should override the method `prepare_elasticseach_data` which data be prepare
   - Auth
 - prepare data of sales modules and create Kibana dashboard
 - prepate data of invoice modules and create Kibana dashboard
-
-# Contact

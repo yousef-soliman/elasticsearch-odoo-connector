@@ -34,5 +34,6 @@ docker-compose up -d
 - be configurable
   - hosts
   - Auth
+  - Multi nodes
 - prepare data of sales modules and create Kibana dashboard
 - prepate data of invoice modules and create Kibana dashboard

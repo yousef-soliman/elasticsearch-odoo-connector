@@ -22,6 +22,13 @@ class SaleOrder(models.Model):
 when a record created in Odoo you should find the document of this record in index 'sale.order'
 you should override the method `prepare_elasticseach_data` which data be prepared to be created in elasticsearch
 
+# Try it with docker
+``` Shell
+docker-compose up -d
+```
+
+- go to `localhost:8069` create a new DB and install module `sale_elasticsearch_example` create a new record
+- go to `localhost:5601` find you record in index `sale.order` 
 
 # what is next?
 - be configurable

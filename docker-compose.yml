@@ -1,7 +1,7 @@
 version: '2.1'
 services:
     odoo:
-        image: odoo:14.0
+        build: .
         depends_on:
             - db
             - elasticsearch

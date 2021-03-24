@@ -7,8 +7,8 @@
     "description": "Sale Elasticsearch Example",
     "depends": [
         "base",
-        "sale",
-        "elasicsearch_connector",
+        "sale_management",
+        "elasticsearch_connector",
     ],
     "data": [],
     "installable": True,

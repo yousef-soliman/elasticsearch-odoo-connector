@@ -8,7 +8,9 @@
     "depends": [
         "base",
     ],
-    "data": [],
+    "data": [
+        "data/elasticsearch.xml",
+    ],
     "installable": True,
     "license": "OPL-1",
 }

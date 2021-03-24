@@ -3,8 +3,6 @@
 from elasticsearch import Elasticsearch
 from odoo import _, api, fields, models
 
-es = Elasticsearch(["elasticsearch:9200"])
-
 
 class ElasticsearchMixin(models.AbstractModel):
     """
@@ -20,6 +18,15 @@ class ElasticsearchMixin(models.AbstractModel):
             "Please Implement this prepare_elasticseach_data"
         )
 
+    def _get_elasticsearch_client(self):
+        """Get Elasticsearch client """
+
+        ICP = self.env["ir.config_parameter"].sudo()
+        hosts = ICP.get_param("elasticsearch.hosts")
+        hosts = hosts.split(",")
+        es = Elasticsearch(hosts)
+        return es
+
     def index(self, index=None, document_id=None):
         """index document in Elasticsearch
 
@@ -31,6 +38,7 @@ class ElasticsearchMixin(models.AbstractModel):
         if index is None:
             index = self._name
         body = self.prepare_elasticseach_data()
+        es = self._get_elasticsearch_client()
         document = es.index(index=index, id=document_id, body=body)
         return document
 
@@ -41,6 +49,7 @@ class ElasticsearchMixin(models.AbstractModel):
         """
         if index is None:
             index = self._name
+        es = self._get_elasticsearch_client()
         document = es.delete(index=index, id=document_id)
         return document
 
